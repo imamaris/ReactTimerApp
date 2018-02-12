@@ -1,4 +1,4 @@
-var webpack = require ('webpack');
+var webpack = require('webpack');
 
 module.exports = {
   entry: [
@@ -6,12 +6,12 @@ module.exports = {
     'script!foundation-sites/dist/foundation.min.js',
     './app/app.jsx'
   ],
-  externals:{
-    jquery : 'jQuery'
+  externals: {
+    jquery: 'jQuery'
   },
-  plugin: [
+  plugins: [
     new webpack.ProvidePlugin({
-      '$': 'jQuery',
+      '$': 'jquery',
       'jQuery': 'jquery'
     })
   ],
@@ -23,8 +23,8 @@ module.exports = {
     root: __dirname,
     alias: {
       Main: 'app/components/Main.jsx',
-      Navigation: 'app/components/Navigation.jsx',
-      applicationStyles: 'app/styles/app.scss'
+      applicationStyles: 'app/styles/app.scss',
+      Navigation: 'app/components/Navigation.jsx'
     },
     extensions: ['', '.js', '.jsx']
   },
@@ -39,5 +39,6 @@ module.exports = {
         exclude: /(node_modules|bower_components)/
       }
     ]
-  }
+  },
+  devtool: 'cheap-module-eval-source-map'
 };
